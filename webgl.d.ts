@@ -11,7 +11,9 @@ interface WebGLObject {
 }
 
 interface WebGLBuffer extends WebGLObject {
-	$__dummyprop__WebGLBuffer : any;
+    $__dummyprop__WebGLBuffer: any;
+    itemSize: number;
+    numItems: number;
 }
 
 interface WebGLFramebuffer extends WebGLObject {
@@ -19,7 +21,11 @@ interface WebGLFramebuffer extends WebGLObject {
 }
 
 interface WebGLProgram extends WebGLObject {
-	$__dummyprop__WebGLProgram : any;
+    $__dummyprop__WebGLProgram: any;
+    vertexPositionAttribute: number;
+    vertexColorAttribute: number;
+    pMatrixUniform: WebGLUniformLocation;
+    mvMatrixUniform: WebGLUniformLocation;
 }
 
 interface WebGLRenderbuffer extends WebGLObject {
@@ -345,7 +351,9 @@ interface WebGLRenderingContext {
 	CONTEXT_LOST_WEBGL : number;
 	UNPACK_COLORSPACE_CONVERSION_WEBGL : number;
 	BROWSER_DEFAULT_WEBGL : number;
-	canvas : HTMLCanvasElement;
+	canvas: HTMLCanvasElement;
+	viewportHeight: number;
+	viewportWidth: number;
 	getContextAttributes() : WebGLContextAttributes;
 	isContextLost() : bool;
 	getSupportedExtensions() : string[];
